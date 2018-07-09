@@ -19,6 +19,7 @@ def first_word(words)
 end
 
 def titleize(sentence)
-    stop_words = %w{a an and the or for of nor from is are}
-    sentence.split.each_with_index.map{|word, index| stop_words.include?(word) && index > 0 ? word : word.capitalize }.join(" ")
+    sentence.split.each_with_index.map{
+        |word, index| word.size <=3 && index > 0 ? word : word.capitalize     
+    }.join(" ")
 end
